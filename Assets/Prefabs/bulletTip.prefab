@@ -3460,7 +3460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8db1100ba6f6f64fa545b5f275b340e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletForce: 15000
+  bulletForce: 200
   bulletSize: 0.008
   destructionDelay: 0
   bulletLife: 3

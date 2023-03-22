@@ -5,16 +5,10 @@ using UnityEngine;
 public class damageScript : MonoBehaviour
 {
     private Rigidbody rb;
-    private GameObject Gun;
     private int health = 10;
-    private int damage;
-    private GameObject gun;
-    private gunFire gunFire;
-    // Start is called before the first frame update
+    private int bulletDamage;
     private void Start()
     {
-        gun = GameObject.Find("Gun");
-        gunScript = gun.GetComponent<gunFire>();
     }
 
     // Update is called once per frame
@@ -26,11 +20,12 @@ public class damageScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet")
         {
-            health -= damage;
+            health -= other.gameObject.GetComponent<BulletScript>().bulletDamage;
             if (health < 0)
             {
-                rb.useGravity = true;
-                rb.constraints = RigidbodyConstraints.None;
+                Destroy(gameObject);
+                /*rb.useGravity = true;
+                rb.constraints = RigidbodyConstraints.None;*/
             }
         }
         

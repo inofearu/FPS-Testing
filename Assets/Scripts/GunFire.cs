@@ -5,9 +5,8 @@ using UnityEngine.InputSystem;
 
 public class GunFire : MonoBehaviour
 {
-    public GameObject Bullet;
+    [SerializeField] GameObject Bullet;
     [SerializeField] float FireCooldown = 0.5f;
-    [SerializeField] int bulletDamage = 4;
     private float nextFire = 0.0f;
     // Start is called before the first frame update
     private void Start()

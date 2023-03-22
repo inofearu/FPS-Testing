@@ -10,6 +10,7 @@ public class BulletScript : MonoBehaviour
     private int bulletHardKill = 30;
     [SerializeField] int bulletLife = 3;
     private float firedAt;
+    public int bulletDamage = 4;
     private Rigidbody rb;
     // Start is called before the first frame update
     private void Start()
