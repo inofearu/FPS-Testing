@@ -15,14 +15,14 @@ public class BulletScript : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-         rb = GetComponent<Rigidbody>();
-         transform.rotation = transform.parent.rotation;
-         transform.Rotate(-90,0,0,Space.Self);
-         gameObject.transform.parent = null;
-         gameObject.transform.localScale = new Vector3(bulletSize,bulletSize,bulletSize);
-         firedAt = Time.time;
-         rb.AddForce(transform.up * bulletForce * Time.deltaTime);
-         Destroy(gameObject,bulletHardKill);
+          rb = GetComponent<Rigidbody>();
+          transform.rotation = transform.parent.rotation;
+          transform.Rotate(-90,0,0,Space.Self);
+          gameObject.transform.parent = null;
+          gameObject.transform.localScale = new Vector3(bulletSize,bulletSize,bulletSize);
+          firedAt = Time.time;
+          rb.AddForce(transform.up * bulletForce * Time.deltaTime);
+          Destroy(gameObject,bulletHardKill);
     }
 
     private void OnCollisionEnter(Collision other)

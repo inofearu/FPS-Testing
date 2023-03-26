@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class damageScript : MonoBehaviour
+public class DamageScript : MonoBehaviour
 {
     private Rigidbody rb;
-    private int health = 10;
+    private int Health = 10;
     private int bulletDamage;
     private void Start()
     {
@@ -20,12 +20,11 @@ public class damageScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet")
         {
-            health -= other.gameObject.GetComponent<BulletScript>().bulletDamage;
-            if (health < 0)
+            Health -= other.gameObject.GetComponent<BulletScript>().bulletDamage;
+            if (Health < 0)
             {
                 Destroy(gameObject);
-                /*rb.useGravity = true;
-                rb.constraints = RigidbodyConstraints.None;*/
+                //rb.useGravity = true;
             }
         }
         
